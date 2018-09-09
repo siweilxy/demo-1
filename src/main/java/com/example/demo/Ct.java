@@ -5,8 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller()
+@RequestMapping(value = "2")
 public class Ct {
-	@GetMapping("2")
+	//@RequestMapping(method = RequestMethod.GET,value = "2")
+	@GetMapping("3")
 	public String test() {
 		return "index";
 	}
