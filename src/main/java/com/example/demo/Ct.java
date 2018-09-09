@@ -10,6 +10,6 @@ public class Ct {
 	//@RequestMapping(method = RequestMethod.GET,value = "2")
 	@GetMapping("3")
 	public String test() {
-		return "index";
+		return "my-app/index";
 	}
 }
