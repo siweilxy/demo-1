@@ -1,14 +1,13 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/1")
+@Controller()
 public class Ct {
-	@RequestMapping(value = "/2")
-	public int test() {
-		return 1;
-
+	@GetMapping("2")
+	public String test() {
+		return "index";
 	}
 }
