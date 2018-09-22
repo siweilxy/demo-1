@@ -10,6 +10,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.example.demo.Country;
 
@@ -17,7 +20,8 @@ import com.example.demo.Country;
 public class Demo1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Demo1Application.class, args);	
+		SpringApplication.run(Demo1Application.class, args);
+		
 		Reader reader;
 		try {
 			reader = Resources.getResourceAsReader("mybatis-config.xml");
@@ -33,5 +37,8 @@ public class Demo1Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		Country country = context.getBean("test",Country.class);
+		System.out.println(country.getId());
 	}
 }

@@ -1,8 +1,13 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Country {
+	@Value("1")
 	private Long id;
+	@Value("2")
 	private String countryname;
+	@Value("3")
 	private String countrycode;
 
 	public Long getId() {
